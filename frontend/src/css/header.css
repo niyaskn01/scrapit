@@ -1,0 +1,144 @@
+.header{
+  padding-inline: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.logo{
+  font-size: 32px;
+  color: rgb(137, 237, 189);
+  cursor: pointer;
+  animation: headerAnimation .8s ease-in-out;
+  font-family: "Baskervville SC", serif;
+  font-weight: bold;
+}
+.left{ 
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.right{
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menuList{
+  width: 70%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  color: white;
+}
+.menuList .menuItems{
+  align-self: center;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.9s ease;
+}
+.active{
+  color: rgb(137, 237, 189) !important;
+  font-size: 21px !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important ;
+  text-decoration-color: brown;
+}
+.menuBar img{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.menuBox{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  background: #0b0505 ;
+  left: 0;
+  right: 30%;
+  align-items: center;
+  z-index: 999;
+  gap: 20px;
+  padding-top: 90px;
+  animation: menuBoxAnimation .3s;
+}
+.menuBox .menuItems{
+  align-self: center;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.9s ease;
+}
+
+
+
+@media (min-width:720px) {
+  .menuBar{
+    display: none;
+  }
+}
+
+@media(max-width:960px){
+  .menuList{
+    width: 100%;
+  }
+}
+
+@media(max-width:720px){
+  .menuList{
+    display: none;
+  }
+  .menuBar{
+    display: block;
+  }
+}
+@media (max-width:576px) {
+  .header{
+    padding-left: 20px;
+  }
+}
+
+@keyframes headerAnimation {
+  0%,100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(20px) scale(1.5);
+  }
+}
+
+@keyframes menuBoxAnimation {
+  from {
+    transform: translateX(-100%) ;
+  }
+  to {
+    transform: translateX(0px) ;
+  }
+}
+
+
+
+
+.bottomHeader{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: rgb(137, 237, 189);
+  display: flex;
+  justify-content: space-around;
+}
+.bottomHeader .left,.bottomHeader .right{
+  width: 40%;
+  font-size: 16px;
+  font-weight: bold;
+}

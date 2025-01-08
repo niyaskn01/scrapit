@@ -1,0 +1,14 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Handlee&display=swap');
+
+
+*{    
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{          
+        background : linear-gradient(to top right,rgb(137, 237, 189) -450%,black 50%,rgb(137, 237, 189) 450%);
+        font-family: "Exo 2", serif;
+        position: relative;
+    }

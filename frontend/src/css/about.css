@@ -1,0 +1,76 @@
+.aboutContainer{
+  color: #fff;
+  padding-inline: 130px;
+  padding-top: 50px;
+  overflow: scroll;
+  height: calc(100vh - 115px);
+}
+.aboutContainer h1{
+  margin-bottom: 10px;
+  font-size: 60px;
+  animation: h1Anime 1s ease;
+}
+
+.aboutContainer p{
+  margin-bottom: 40px;
+  font-size: 24px;
+  text-shadow: ellipse;
+  animation: pAnime 1s ease;
+  line-height: 30px;
+}
+.bold{
+  font-weight: bold;
+}
+
+@media(max-width:960px){
+  
+  .aboutContainer h1{
+    font-size: 45px;
+  }
+  .aboutContainer p{
+    font-size: 18px;
+  }
+}
+
+@media(max-width:720px){
+  .aboutContainer {
+    padding-inline: 80px;
+    padding-top: 30px;
+  }
+}
+@media(max-width:576px){
+  .aboutContainer {
+    padding-inline: 20px;
+  }
+  .aboutContainer h1{
+    font-size: 26px;
+  }
+  .aboutContainer p{
+    font-size: 17px;
+  }
+}
+@keyframes h1Anime {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+
+  }
+}
+@keyframes pAnime {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+
+  }
+}
+

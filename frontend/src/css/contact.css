@@ -1,0 +1,132 @@
+.contactContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 85px);
+}
+
+.formContainer{
+  width: 90%;
+  height: 100%;
+  background: url('../scrap/images/bg.jpeg') no-repeat center center;
+  background-size: cover;
+  border-radius: 20px;
+  padding-inline: 6%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  display: flex;
+  overflow: scroll;
+  
+}
+.formContainer::-webkit-scrollbar{
+  display: none;
+}
+.leftSection{
+  width: 50%;
+  padding: 30px;
+  /* overflow: scroll; */
+}
+/* .leftSection::-webkit-scrollbar{
+  display: none;
+} */
+.leftSection h1{
+  color: rgb(137, 237, 189);
+  font-size: 34px;
+}
+.leftSection p{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #111;
+}
+.leftSection .inputBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inputGroup{
+  display: flex;
+  flex-direction: column;
+}
+.inputGroup label{
+  font-size: 18px;
+  color: #111;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.inputGroup input,.inputGroup textarea{
+  outline: none;
+  border: 1px solid rgb(137, 237, 189);
+  background: #ebe7e7;
+  padding: 4px;
+  padding-inline: 5px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+.inputGroup textarea{
+  height: 80px;
+}
+.inputGroup button{
+  padding: 6px;
+  padding-inline: 5px;
+  border-radius: 15px;
+  border: none;
+  background: rgb(137, 237, 189);
+  color: #333;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Handlee' serif;
+}
+.inputGroup button:hover{
+  background: rgb(120, 236, 180);
+}
+.inputGroup button:active{
+  background: rgb(60, 243, 155);
+}
+.rightSection{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightSection img{
+  height: 80% ;
+}
+
+@media (max-width :770px){
+  .rightSection{
+    display: none;
+  }
+  .leftSection{
+    width: 100%;
+  }
+}
+@media(max-width:576px){
+  .contactContainer{
+    
+  }
+  .formContainer{
+    width: 100%;
+    background: none;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    }
+  .leftSection{
+    padding: 10px;
+  }
+  .inputGroup textarea{
+    height: 150px;
+  }
+  .inputGroup label{
+    color: #fff;
+  }
+  .leftSection p{
+    color: #fff;
+  }
+}
