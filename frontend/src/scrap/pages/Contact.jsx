@@ -57,7 +57,7 @@ function Contact() {
             <textarea onChange={handleChange} value={formData.message} type="text" name="message" id="" />
           </div>
           <div className="inputGroup">
-            <button onClick={handleSubmit}>Send Message</button>
+            <button type="button" onClick={handleSubmit}>Send Message</button>
           </div>
         </div>
         </div>
