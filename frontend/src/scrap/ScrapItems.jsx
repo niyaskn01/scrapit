@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/scrapitems.css'
-import img from './images/bodyimg.png'
+import img from './images/bgremoved.png'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 function ScrapItems() {
