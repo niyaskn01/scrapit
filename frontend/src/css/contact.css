@@ -8,8 +8,8 @@
 .formContainer{
   width: 90%;
   height: 100%;
-  background: url('../scrap/images/bg.jpeg') no-repeat center center;
-  background-size: cover;
+  /* background: url('../scrap/images/bg.jpeg') no-repeat center center;
+  background-size: cover; */
   border-radius: 20px;
   padding-inline: 6%;
   padding-top: 3%;
@@ -105,9 +105,6 @@
   }
 }
 @media(max-width:576px){
-  .contactContainer{
-    
-  }
   .formContainer{
     width: 100%;
     background: none;
