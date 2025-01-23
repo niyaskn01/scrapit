@@ -11,6 +11,7 @@ function Contact() {
     email:'',
     message:''
   })
+  const [loading ,setLoading]=useState(false)
 
   const handleChange=(e)=>{
     const {name,value}=e.target
@@ -23,12 +24,15 @@ function Contact() {
   const handleSubmit=async(e)=>{
     e.preventDefault()
     try {
+      setLoading(true)
       const {data}=await axiosInstance.post('/send-email',{formData})
       if(data.success){
         toast.success(data.message)
+        setLoading(false)
         setFormData({name:'',email:'',message:''})
       }else{
         toast.error(data.message)
+        setLoading(false)
       }
     } catch (error) {
       console.log(error)  
@@ -57,7 +61,9 @@ function Contact() {
             <textarea onChange={handleChange} value={formData.message} type="text" name="message" id="" />
           </div>
           <div className="inputGroup">
-            <button type="button" onClick={handleSubmit}>Send Message</button>
+            <button type="button" onClick={handleSubmit}>
+              {loading?"sending":'Send Message'}
+            </button>
           </div>
         </div>
         </div>
