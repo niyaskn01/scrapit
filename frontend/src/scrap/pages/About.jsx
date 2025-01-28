@@ -10,7 +10,7 @@ function About() {
       <div className="aboutContainer">
         <h1>Who We Are</h1>
         <p>
-          Welcome to <span style={{color:'rgb(137, 237, 189)'}}>ScrapIt</span> – your trusted partner in sustainable recycling!
+          Welcome to <span style={{color:'rgb(137, 237, 189)'}}>ScrapItNow</span> – your trusted partner in sustainable recycling!
         <br /><br />
         We specialize in the collection of <span style={{fontWeight:'bold'}}>metals, used, and scrapped electronic items and other scraps like books and plastic bottles</span>  to give them a new lease on life. By responsibly recycling these materials, we aim to reduce waste and contribute to a cleaner, greener planet.
         <br /><br />

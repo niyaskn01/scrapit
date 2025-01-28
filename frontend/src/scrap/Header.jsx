@@ -21,7 +21,7 @@ function Header() {
       <div className="left">
         <span className="logo"
         onClick={handleClick}
-        >ScrapIt</span>
+        >ScrapItNow</span>
       </div>
       <div className="right">
         <div className="menuList">
