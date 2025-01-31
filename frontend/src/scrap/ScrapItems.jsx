@@ -12,11 +12,10 @@ function ScrapItems() {
       <div className='scrapContainer'>
         <div className="scrapTextBox">
           <h1>Recycle your <span>scrap</span>  with us <span>!</span></h1>
-          <p className='scrapContent'>
-            Chooose a convinient time ,and our team will collect the scrap from the doorstep. As 
-            expert in scrap management, we promote responsible recycling, helping you
-            declutter and contribute to a sustainable future.
-         </p>        
+          <h2 className='scrapContent'>
+            Looking for scrap collectors in Ernakulam?We are your trusted scrap buyers and recylers, offering doorstep pickup
+            for metal ,plastic ,e-waste and paper scrap. Our hussle-free service ensures responsible disposal while giving you the best rates.
+          </h2>        
          </div>
          <div className="imageContainer">
           <img src={img} alt="" />

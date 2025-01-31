@@ -60,7 +60,7 @@ function Header() {
       loc.pathname !=='/contact' &&
       <div className="bottomHeader">
         <div className="left">+91 6235572660</div>
-        <div className="right">scrapit123@gmail.com</div>
+        <div className="right">scrapitnow123@gmail.com</div>
       </div>
     }
     
