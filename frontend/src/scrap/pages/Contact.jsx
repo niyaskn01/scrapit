@@ -3,41 +3,51 @@ import Header from '../Header'
 import Layout from '../Layout'
 import '../../css/contact.css'
 import toast from 'react-hot-toast'
-import {axiosInstance} from '../../axios/Axios'
 
 function Contact() {
-  const [formData,setFormData]=useState({
-    name:'',
-    email:'',
-    message:''
-  })
+  
   const [loading ,setLoading]=useState(false)
 
-  const handleChange=(e)=>{
-    const {name,value}=e.target
-    setFormData((prev)=>({
-      ...prev,
-      [name]:value
-    }))
-    
-  }
-  const handleSubmit=async(e)=>{
-    e.preventDefault()
+  const onSubmit = async (event) => {
+    event.preventDefault();
+  
+    if (loading) return; // Prevent multiple submissions
+  
+    setLoading(true);
+    const formData = new FormData(event.target);
+    formData.append("access_key", "504fd9c3-c1e8-4107-90e3-6b45efb12f8d");
+  
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+  
     try {
-      setLoading(true)
-      const {data}=await axiosInstance.post('/send-email',{formData})
-      if(data.success){
-        toast.success(data.message)
-        setLoading(false)
-        setFormData({name:'',email:'',message:''})
-      }else{
-        toast.error(data.message)
-        setLoading(false)
-      }
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
+  
+      const res = await response.json();
+  
+      if (res.success) {
+        console.log("Success", res);
+        toast.success('Email send')
+        event.target.reset();
+      } else {
+        console.error("Error:", res);
+      toast.error('Error')
+
+   }
     } catch (error) {
-      console.log(error)  
+      console.error("Request failed:", error);
+      toast.error('Request failed:')
+    } finally {
+      setLoading(false);
     }
-  } 
+  };
   return (
     <Layout>
       <Header/>
@@ -46,26 +56,28 @@ function Contact() {
         <div className="leftSection">
         <h1>Get  In Touch</h1>
         <p>Feel free to drop a line below</p>
-
+      <form onSubmit={onSubmit}>
         <div className="inputBox">
           <div className="inputGroup">
             <label htmlFor="">Your Name</label>
-            <input onChange={handleChange} value={formData.name} type="text" name="name" id="" />
+            <input type="text" name="name" />
           </div>
           <div className="inputGroup">
             <label htmlFor="">Your Email</label>
-            <input onChange={handleChange} value={formData.email} type="text" name="email" id="" />
+            <input type="text" name="email" />
           </div>
           <div className="inputGroup">
             <label htmlFor="">Your Message</label>
-            <textarea onChange={handleChange} value={formData.message} type="text" name="message" id="" />
+            <textarea type="text" name="message"  />
           </div>
           <div className="inputGroup">
-            <button type="button" onClick={handleSubmit}>
+            <button>
               {loading?"sending":'Send Message'}
             </button>
           </div>
+          
         </div>
+        </form>
         </div>
       </div>
       </div>
